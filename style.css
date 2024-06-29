@@ -15,7 +15,6 @@ body{
 
 header{
     background-color: rgb(49, 81, 179);
-    /* background: linear-gradient( 95deg, rgb(49, 81, 179) 90%, rgb(224, 217, 224) 30% ); */
     transform-origin: left;
     transform: skewY(-2deg);
     z-index: -1;
