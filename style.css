@@ -1,38 +1,40 @@
 
+@import url('https://fonts.cdnfonts.com/css/norse');
+
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
-    /* justify-content: flex-start;
-    align-items: flex-start;
-    background-color: black; */
     display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 0.7fr 3fr 0.6fr;
 }
 
 .footImg{
-    width: 40px;
+    max-width: 200px;
 }
 
 header{
-    background-color: aqua;
-    padding-left: 300px;
+    background-color: rgb(111, 137, 214);
+    padding: 10px 1rem;
 }
 header nav{
     display: flex;
     gap: 60px;
 }
 .name{
-    padding-left: 300px;
+    padding-left: 3rem;
+    color: rgb(252, 247, 247);
 }
 
 main{
-    background-color: violet;
+    background-color: rgb(218, 195, 218);
+    /* max-width: auto; */
 }
 .firstPart{
     display: flex;
-    margin-top: 32px;
+    margin-top: 20px;
     justify-content: space-between;
-    padding: 0 50px;
+    /* padding: 0 50px; */
+    padding: 0 1rem;
 }
 .quote {
     border: .2em solid rgb(145, 107, 107);
@@ -46,19 +48,27 @@ main{
     border-radius: 2vh;
 }
 aside{
-    background-color: blueviolet;
+    background-color: rgb(152, 86, 211);
     padding-right: 32px;
+    color: rgb(228, 221, 221);
+    border-radius: 1vh;
+}
+
+.proHead{
+    color: rgb(73, 21, 21);
+    font-style:oblique;
 }
 
 .allProject{
     display: grid;
-    /*grid-template-columns: repeat(2, minmax(50px, 1fr)); */
+    grid-template-columns: repeat(3, minmax(20px, 1fr)); 
     margin: 0 20px;
-    gap: 40px;
-    margin-top: 10px;
+    gap: 20px;
+    /* margin-top: 10px; */
 }
 
-.allProject section{
+
+.allProject .cards{
     text-align: left;
     padding: 0 10px;
     border: 5px solid white; 
@@ -70,10 +80,117 @@ aside{
     border-radius: 1vh;
     border-left-color: orange;
     font-size: 18px;
-    height: 100%;
+    /* height: 100%; */
 }
+
+.allProject .cards {
+    transition: 
+        transform 0.25s, background-color 0.25s;
+    /* transition: background-color 1s ease-out 0.25s; */
+}
+
+.allProject .cards:hover {
+    transform: scale(1.05);
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.mainSvg{
+    display: flex;
+    justify-content: end;
+    gap:10px
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+@media (max-width: 800px){
+    .allProject{
+        grid-template-columns: repeat(2, minmax(10px, 0.5fr));
+        margin: 0 10px;
+        gap: 10px;
+    }
+    .allProject section{
+        font-size: 14px;
+    }
+   
+    .quote{
+        justify-content: center;
+        /* padding: 0 .5rem; */
+        margin-left: 1em;
+    }
+
+    .name{
+        padding-left: 0;
+    }
+    header nav{
+        display: flex;
+        flex-direction: column;
+        /* gap: 60px; */
+        row-gap: 10px;
+    }
+}
+
+@media (max-width: 600px){
+    aside{
+        display: none;
+    } 
+}
+
 
 footer{
-    background-color: rgb(223, 223, 91);
+    background-color: rgb(209, 209, 144);
+    /* margin-top: 10px; */
 }
 
+.footerImg{
+    max-width: 200px;
+}
+
+.contacts{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 900px){
+    nav{
+        max-width: fit-content;
+        margin-left: auto;/*  pushes it to extreme right */
+        margin-right: auto;/*  pushes it to extreme left, so together put div in middle */
+    }
+    .contacts{
+        max-width: fit-content;
+        margin-inline: auto;
+        gap:5em
+    }
+    .footerImg{
+        max-width: 250px;
+    }
+}
+
+@font-face {
+    font-family: Norse;
+    src: url('./assets/Norse-Bold.otf');
+}
+
+@font-face {
+    font-family: Norse;
+    font-weight: bold;
+    src: url('./assets/Norse-Bold.otf');
+}
+
+h1 {
+    color: rgb(236, 226, 226);
+    font-size: 60px;
+    font-family: 'Norse';
+    font-weight: bold;
+    /* filter: brightness(100); */
+}
